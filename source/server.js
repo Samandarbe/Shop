@@ -1,9 +1,8 @@
 import express from 'express'
 import './config.js'
 import UserRouter from './routers/index.js'
-
 import database from './db/index.js'
-// import mockData from './mock.js'
+import mockData from './db/mock.js'
 
 const PORT = process.env.PORT || 6000
 
@@ -12,7 +11,7 @@ const PORT = process.env.PORT || 6000
 
     
     const db = await database()
-    // await mockData({ sequelize: db })
+    await mockData({ sequelize: db })
     
     app.use(express.json())
     app.use((req, res, next) => {

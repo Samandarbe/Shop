@@ -1,5 +1,5 @@
 import { Op } from "sequelize"
-
+// Abduhosim tekshirish kerak
 const GET = async (req, res) => {
     const users = await req.models.User.findAll()
     console.log(users);
@@ -15,6 +15,7 @@ const POST = async (req, res) => {
 
     return res.status(200).send(user)
 }
+// Abduhosim tekshirish kerak
 
 const UPDATE = async (req, res) => {
     const user = await req.models.User.update(
@@ -30,6 +31,7 @@ const UPDATE = async (req, res) => {
 
     return res.status(200).send(user)
 }
+// Abduhosim tekshirish kerak
 
 const DELETE = async (req, res) => {
     const deletedUser = await req.models.User.findOne({ 

@@ -3,9 +3,9 @@ import CT from '../controllers/index.js'
 
 const router = Router()
 
-router.get('/users', CT.GET)
-router.post('/users', CT.POST)
-router.put('/users/:userId', CT.UPDATE)
-router.delete('/users/:userId', CT.DELETE)
+router.get('/users', CT.user.GET)
+router.post('/users', CT.user.POST)
+router.put('/users/:userId', CT.user.UPDATE)
+router.delete('/users/:userId', CT.user.DELETE)
 
 export default router
