@@ -1,5 +1,5 @@
 import { Sequelize } from "sequelize"
-import models from '../models/index.js'
+import model from '../models/index.js'
 
 const sequelize = new Sequelize({
     username: process.env.PG_USER,
@@ -16,9 +16,10 @@ export default async () => {
         await sequelize.authenticate()
         console.log('Database connnected!')
 
-        await models({ sequelize })
+        await model.users({ sequelize })
+        await model.products({ sequelize })
 
-        await sequelize.sync({ alter: true })
+        await sequelize.sync({ force: true })
 
         return sequelize
     } catch (error) {
