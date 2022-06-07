@@ -1,3 +1,7 @@
-import models from './user.js'
+import users from './user.js'
+import products from './products.js'
 
-export default models
+export default {
+    users,
+    products
+}

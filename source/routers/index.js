@@ -1,3 +1,7 @@
-import router from "./user.js";
+import userRouter from "./user.js";
+import productRouter from "./product.js"
 
-export default router 
+export default {
+    userRouter,
+    productRouter
+}

@@ -1,2 +1,6 @@
 import user from './user.js'
-export default user
+import product from './product.js'
+
+export default {
+    user, product
+}

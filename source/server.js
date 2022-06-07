@@ -1,11 +1,11 @@
 import express from 'express'
 import './config.js'
-import UserRouter from './routers/index.js'
+import routers from './routers/index.js'
 
 import database from './db/index.js'
-// import mockData from './mock.js'
+// import mockData from './db/mock.js'
 
-const PORT = process.env.PORT || 6000
+const PORT = process.env.PORT || 5000
 
 !async function () {
     const app = express()
@@ -17,10 +17,12 @@ const PORT = process.env.PORT || 6000
     app.use(express.json())
     app.use((req, res, next) => {
         req.models = db.models
+
         next()
     })
     
-    app.use(UserRouter)
+    app.use(routers.userRouter)
+    app.use(routers.productRouter)
     
     app.listen(PORT, () => console.log('server ready at *' + PORT))
 }()
